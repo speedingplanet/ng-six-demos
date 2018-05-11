@@ -1,0 +1,26 @@
+<h2>The deprecated &lt;template&gt; element</h2>
+
+<p>The <code>&lt;template&gt;</code> element has been deprecated and replaced with <code>&lt;ng-template&gt;</code>. So where you used to do this:</p>
+
+<pre><code [highlight]>
+&lt;p *ngIf=&quot;count &gt; 5; else equalToFiveTemplate&quot;&gt;Count is greater than 5.&lt;/p&gt;
+&lt;template #equalToFiveTemplate&gt;
+  &lt;p&gt;Count is equal to 5.&lt;/p&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>Now do this: </p>
+
+<pre><code [highlight]>
+&lt;p *ngIf=&quot;count &gt; 5; else equalToFive&quot;&gt;Count is greater than 5.&lt;/p&gt;
+&lt;ng-template #equalToFiveNgTemplate&gt;
+  &lt;p&gt;Count is equal to 5.&lt;/p&gt;
+&lt;/ng-template&gt;
+</code></pre>
+
+<p>In action: </p>
+
+<p *ngIf="count > 5; else equalToFive">Count is greater than 5.</p>
+<ng-template #equalToFive>
+  <p>Count is equal to 5.</p>
+</ng-template>
